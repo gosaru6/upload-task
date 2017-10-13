@@ -51,7 +51,8 @@ class BoardsController < ApplicationController
   end
 
   def current_user_check
-    if !User.find(session[:user_id])
+    current_user
+    if !logged_in?
       redirect_to new_session_path, notice: "ログインしてください"
     end
   end
