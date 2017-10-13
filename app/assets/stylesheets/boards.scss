@@ -1,0 +1,65 @@
+body {
+  font-family: arial unicode ms;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
+.board_contents {
+  height:100px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.contents {
+  border: dotted 1px #666666;
+  border-radius: 20px;
+}
+
+p {
+  margin-top: 20px;
+  padding: 5px 0px 20px 20px;
+  height: 50px;
+}
+
+.form-area {
+  text-align: center;
+}
+
+.submit-button {
+  margin: 0 auto;
+}
+
+.row {
+  overflow:scroll;
+  height: 450px;
+}
+
+.img-responsive {
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.side-bar {
+  height: 200px;
+  margin-top: 20px;
+  border: dotted 1px #666666;
+  border-radius: 20px;
+}

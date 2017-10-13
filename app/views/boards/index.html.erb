@@ -1,0 +1,30 @@
+<div class="container jumbotron">
+  <div class="header">
+    <h3><%= notice %></>
+      <h2>いちらん</h2>
+      <h2><%= link_to 'かく', new_board_path %></h2>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="row">
+        <% count = 0 %>
+        <% @boards.each do |board| %>
+        <% count += 1%>
+        <div class="board_contents col-xs-12 col-md-8">
+          <p class="contents"><%= link_to  board.content, board_path(board.id), class:"content" %></p>
+          <%= link_to 'へんしゅう', edit_board_path(board.id), class: 'btn btn-info'  %> |
+          <%= link_to 'けす', board, method: :delete, data: { confirm: 'ほんとに?'}, class: 'btn btn-danger'  %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="side-bar row">
+        <div class="col-xs-12 col-md-offset-2 col-md-10">
+          <h3>かいたかず</h3>
+          <h3><%= count%>　こ</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
