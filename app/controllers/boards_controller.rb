@@ -15,6 +15,7 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
+    @board.user_id = current_user.id
     if @board.save
       redirect_to boards_path, notice: "さくせいしました"
     else
@@ -23,9 +24,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-  end
-
-  def edit
+    #@favorite = current_user.favorites.find_by(board_id: @board.id)
   end
 
   def update

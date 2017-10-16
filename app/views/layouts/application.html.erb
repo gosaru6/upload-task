@@ -12,21 +12,22 @@
     <header>
       <ul>
         <li><img src="http://1.bp.blogspot.com/-TCt0mfD4bqQ/Vycehcr_tDI/AAAAAAAA6VA/0XsMlRl_PUAg5C-zFTlVyTyM3pmeLlSgQCLcB/s800/tegami_bird.png" alt="" width="30px" height="30px"></li>
-        <li>ぶろぐ</li>
+        <li><%= link_to "ぶろぐ",boards_path %></li>
       </ul>
     </header>
 
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+      <% content_tag(:div, value, class: "#{key}") %>
     <% end %>
 
-    <% if logged_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "しんきとうろく", new_user_path %>
-      <%= link_to "ログイン", new_session_path %>
-    <% end %>
+      <% if logged_in? %>
+        <%= link_to "プロフィール", user_path(current_user.id) %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+        <%= "あなたのID：#{current_user.id}" %>
+      <% else %>
+        <%= link_to "しんきとうろく", new_user_path %>
+        <%= link_to "ログイン", new_session_path %>
+      <% end %>
 
     <%= yield %>
 

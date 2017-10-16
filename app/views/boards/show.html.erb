@@ -1,3 +1,12 @@
 <h1>詳細</h1>
 <p>内容: <%= @board.content %></p>
+
+<% unless @board.user == current_user %>
+
+  <% if @favorite.present? %>
+    <%= link_to "お気に入りを解除する", favorite_path(board_id: @board.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to "お気に入りにする", favorites_path(board_id: @board.id ), method: :post, class: 'btn btn-primary' %>
+  <% end %>
 <%= link_to "もどる", boards_path %>
+<% end %>
