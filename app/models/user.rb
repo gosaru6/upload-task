@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :boards, through: :favorites, source: :board
   has_many :favorites, dependent: :destroy
+  has_many :favorite_boards, through: :favorites, source: :board
 end

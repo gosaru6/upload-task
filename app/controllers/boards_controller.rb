@@ -24,7 +24,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    #@favorite = current_user.favorites.find_by(board_id: @board.id)
+    @favorite = current_user.favorites.find_by(board_id: @board.id)
   end
 
   def update
@@ -38,6 +38,10 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     redirect_to boards_path, notice: "けしました"
+  end
+
+  def favorite
+    @favorites = current_user.favorite_boards
   end
 
   private

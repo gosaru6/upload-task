@@ -1,0 +1,9 @@
+<h1>おきにいりいちらん</h1>
+<% if @favorites.present? %>
+  <div class="favorite-area">
+    <% @favorites.each do |t| %>
+      <p>なまえ: <%= t.user.name %>さん</p>
+      <p>ないよう: <%= t.content %><p>
+    <% end %>
+  </div>
+<% end %>
