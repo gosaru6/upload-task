@@ -17,6 +17,7 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
     @board.user_id = current_user.id
     if @board.save
+      CreateBoardMailer.create_board(@board).deliver
       redirect_to boards_path, notice: "さくせいしました"
     else
       render 'new'

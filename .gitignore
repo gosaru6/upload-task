@@ -18,5 +18,8 @@
 
 .byebug_history
 
-/vendor/.dosaru3.pub
-/vender/dosaru3
+.dosaru3.pub
+dosaru3
+
+#dotenv-rails
+.env
