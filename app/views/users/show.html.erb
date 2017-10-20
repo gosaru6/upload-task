@@ -1,4 +1,9 @@
-<h1><%= @user.name %>のページ</h1>
+<div class="show-area">
+  <%= form_with(model: @user, local: true) do |form| %>
+    <h1><%= @user.name %>のページ</h1>
 
-<p class="user_p">メールアドレス: <%= @user.email %></p>
-<div class="user_btn"><%= link_to "いちらんへ", boards_path%></div>
+    <p class="user_p">メールアドレス: <%= @user.email %></p>
+    <div><%= image_tag @user.image_url, class: 'image-area' %></div>
+    <div class="user_btn"><%= link_to "いちらんへ", boards_path%></div>
+  <% end %>
+</div>

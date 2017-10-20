@@ -17,9 +17,15 @@
     </div>
     <div>
       <%= form.text_area :content %>
-      <div><%= form.submit :ほぞん %><div>
     </div>
-
+    <div class="field">
+      <%= form.label :がぞう %>
+      <%= form.file_field :image, id: :board_image, class: 'field' %>
+    </div>
+    <div class="submit-button">
+      <%= form.submit :ほぞん %>
+    <div>
+  </div>
     <%= link_to "もどる", boards_path %>
   </div>
 <% end %>

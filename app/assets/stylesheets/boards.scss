@@ -38,8 +38,16 @@ h1, h2 {
   text-align: center;
 }
 
+.field {
+  text-align: center;
+}
+
+#board_image {
+  margin: auto;
+}
+
 .submit-button {
-  margin: 0 auto;
+  margin-top: 30px; 
 }
 
 .row {
@@ -65,5 +73,15 @@ h1, h2 {
 }
 
 .favorite-area {
+  margin-top: 30px;
   text-align: center;
+}
+
+.show-area {
+  text-align: center;
+}
+
+.image-area {
+  height: 150px;
+  width: 150px;
 }
