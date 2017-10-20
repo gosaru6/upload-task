@@ -2,8 +2,10 @@
 
   <h1>詳細</h1>
   <p>内容: <%= @board.content %></p>
-  <p>がぞう</p>
-  <div><%= image_tag @board.image_url, class: 'image-area' %></div>
+  <% if @board.image.present?%>
+    <p>がぞう</p>
+    <div><%= image_tag @board.image_url, class: 'image-area' %></div>
+  <% end %>
   <div class="favorite-area">
     <% unless @board.user == current_user %>
 

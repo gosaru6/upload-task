@@ -3,7 +3,9 @@
     <h1><%= @user.name %>のページ</h1>
 
     <p class="user_p">メールアドレス: <%= @user.email %></p>
-    <div><%= image_tag @user.image_url, class: 'image-area' %></div>
-    <div class="user_btn"><%= link_to "いちらんへ", boards_path%></div>
+    <% if @user.image.present? %>
+      <div><%= image_tag @user.image_url, class: 'image-area' %></div>
+      <div class="user_btn"><%= link_to "いちらんへ", boards_path%></div>
+    <% end %>
   <% end %>
 </div>
